@@ -1,8 +1,8 @@
 [requires]
-restinio/0.6.7.1@stiffstream/stable
-
+restinio/0.6.9
 [generators]
-cmake
+cmake_paths
+cmake_find_package
 
 [options]
 

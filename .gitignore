@@ -34,5 +34,9 @@
 # Build subfolder
 build/
 
+#conan
+conanbuildinfo.txt
+conan_libraries/
+conan.lock
 # Project exclude paths
 /cmake-build-debug/
