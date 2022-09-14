@@ -38,5 +38,6 @@ build/
 conanbuildinfo.txt
 conan_libraries/
 conan.lock
+
 # Project exclude paths
 /cmake-build-debug/

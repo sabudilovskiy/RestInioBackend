@@ -1,0 +1,55 @@
+//
+// Created by MRV on 9/12/2022.
+//
+
+#ifndef RESTINOBACKEND_SYSTEMITEM_
+#define RESTINOBACKEND_SYSTEMITEM_
+#include <string>
+#include <boost/regex.hpp>
+#include <chrono>
+#include <tao/pq/connection.hpp>
+#include <magic_enum.hpp>
+#include "BDError"
+#include <nlohmann/json.hpp>
+#include <queue>
+
+enum class SystemItemType{
+    FILE, FOLDER
+};
+
+enum INDEX_BD{
+    I_id, I_url, I_parentId, I_date, I_size, I_type
+};
+
+class SystemItem{
+protected:
+    SystemItemType type;
+    std::string id;
+    std::optional<std::string> url;
+    std::optional<std::string> parentId;
+    std::uint64_t size;
+    std::string date;
+    std::vector<SystemItem> children;
+public:
+    SystemItemType get_type() const;
+
+    const std::string &get_id() const;
+
+    const std::optional<std::string> &get_url() const;
+
+    const std::optional<std::string> &get_parent_id() const;
+
+    uint64_t get_size() const;
+
+    const std::string &get_date() const;
+
+    const std::vector<SystemItem> &get_childrens() const;
+
+    SystemItem(){}
+    SystemItem(const tao::pq::row& result);
+    static SystemItem get_by_id(std::string_view id, std::shared_ptr<tao::pq::connection> bd, BDError& bd_error);
+    bool import(std::shared_ptr<tao::pq::connection> bd, std::string_view cur_date);
+    static void to_json_with_children(nlohmann::json& json, SystemItem& main_item);
+    static std::optional<SystemItem> from_json(const nlohmann::json& json);
+};
+#endif //RESTINOBACKEND_SYSTEMITEM_

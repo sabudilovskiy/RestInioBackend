@@ -1,0 +1,13 @@
+//
+// Created by MRV on 9/13/2022.
+//
+
+#ifndef RESTINOBACKEND_INCLUDE_HANDLERS_
+#define RESTINOBACKEND_INCLUDE_HANDLERS_
+#include <nlohmann/json.hpp>
+#include <string>
+#include <restinio/all.hpp>
+#include "items/SystemItem"
+#include "answers/answers.h"
+#include "support/support.h"
+#endif //RESTINOBACKEND_INCLUDE_HANDLERS_

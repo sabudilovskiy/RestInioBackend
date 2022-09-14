@@ -1,0 +1,10 @@
+//
+// Created by MRV on 9/12/2022.
+//
+
+#ifndef RESTINOBACKEND_BDERROR_
+#define RESTINOBACKEND_BDERROR_
+enum class BDError{
+    OK, NOT_FOUND, BAD_FORMAT
+};
+#endif //RESTINOBACKEND_BDERROR_

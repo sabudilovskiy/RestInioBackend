@@ -1,3 +1,0 @@
-/home/ubuntu/RestInoBackend/hello-build/CMakeFiles/rebuild_cache.dir
-/home/ubuntu/RestInoBackend/hello-build/CMakeFiles/edit_cache.dir
-/home/ubuntu/RestInoBackend/hello-build/CMakeFiles/RestInoBackend.dir
