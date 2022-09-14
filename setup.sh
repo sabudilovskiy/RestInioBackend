@@ -10,6 +10,6 @@ sudo -u postgres psql
 
 sudo update-rc.d postgresql enable
 
-cp -R ./profiles ~/.conan/profiles
+cp -R ./profiles ~/.conan
 
 source debug.sh

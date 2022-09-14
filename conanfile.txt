@@ -3,7 +3,6 @@ restinio/0.6.9
 magic_enum/0.8.0
 nlohmann_json/3.11.2
 taocpp-taopq/cci.20210727
-boost/1.79.0
 [generators]
 cmake_paths
 cmake_find_package

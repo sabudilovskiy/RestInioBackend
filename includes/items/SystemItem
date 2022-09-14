@@ -5,7 +5,6 @@
 #ifndef RESTINOBACKEND_SYSTEMITEM_
 #define RESTINOBACKEND_SYSTEMITEM_
 #include <string>
-#include <boost/regex.hpp>
 #include <chrono>
 #include <tao/pq/connection.hpp>
 #include <magic_enum.hpp>
