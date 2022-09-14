@@ -4,8 +4,9 @@ os_build=Linux
 arch=x86_64
 arch_build=x86_64
 compiler=gcc
-compiler.version=4:9.3.0-1ubuntu2
-build_type=Debug
+compiler.version=9.4
+compiler.libcxx=libstdc++11
+build_type=Release
 [options]
 [build_requires]
 [env]

@@ -38,8 +38,9 @@ int main()
     }
     catch (std::exception& errc){
         if (logger_file.is_open())
-        {
-            logger_file << '[' << std::chrono::zoned_time{std::chrono::current_zone(), std::chrono::system_clock::now()} << ']' << errc.what() << '\n';
+        {   auto time = std::chrono::system_clock::now();
+            auto time_t = std::chrono::system_clock::to_time_t(time);
+            logger_file << '[' << std::ctime(&time_t) << ']' << errc.what() << '\n';
             logger_file.flush();
         }
 
