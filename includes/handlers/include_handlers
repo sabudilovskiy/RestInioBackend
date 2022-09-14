@@ -9,5 +9,4 @@
 #include <restinio/all.hpp>
 #include "items/SystemItem"
 #include "answers/answers.h"
-#include "support/support.h"
 #endif //RESTINOBACKEND_INCLUDE_HANDLERS_

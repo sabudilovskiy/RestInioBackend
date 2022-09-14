@@ -6,6 +6,7 @@
 #define RESTINOBACKEND_HANDLER_UPDATES_H
 
 #include "include_handlers"
+#include "SystemItem"
 
 auto handler_updates(std::shared_ptr<restinio::request_t> req, restinio::router::route_params_t params, std::shared_ptr<tao::pq::connection> bd){
     try{

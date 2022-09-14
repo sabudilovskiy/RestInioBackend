@@ -9,9 +9,11 @@
 #include <chrono>
 #include <tao/pq/connection.hpp>
 #include <magic_enum.hpp>
-#include "BDError"
+#include "support/BDError"
+#include "items/SystemItem"
 #include <nlohmann/json.hpp>
 #include <queue>
+#include <tao/pq/result.hpp>
 
 enum class SystemItemType{
     FILE, FOLDER
@@ -52,4 +54,18 @@ public:
     static void to_json_with_children(nlohmann::json& json, SystemItem& main_item);
     static std::optional<SystemItem> from_json(const nlohmann::json& json);
 };
+
+inline nlohmann::json parse_SystemItem_to_json(const tao::pq::row& row){
+    nlohmann::json object = nlohmann::json::value_t::object;
+    object["id"]=row.get(I_id);
+    if (!row.is_null(I_url)) object["url"] = row.get(I_url);
+    else object["url"];
+    if (!row.is_null(I_parentId)) object["parentId"] = row.get(I_parentId);
+    else object["parentId"];
+    object["date"] = row.get(I_date);
+    object["size"] = row.get(I_size);
+    object["type"] = row.get(I_type);
+    return object;
+}
+
 #endif //RESTINOBACKEND_SYSTEMITEM_
