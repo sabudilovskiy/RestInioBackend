@@ -34,8 +34,8 @@ auto make_router(std::shared_ptr<tao::pq::connection> conn){
                 return handler_updates(req, std::move(params), conn);
             });
     router->non_matched_request_handler(
-            [](auto req){
-                return req->create_response().set_body("not matched").done();
+            [](std::shared_ptr<restinio::request_t> req){
+                return handler_not_matched(req);
             });
     return router;
 }

@@ -14,7 +14,7 @@ find_package(magic_enum REQUIRED)
 find_package(nlohmann_json REQUIRED)
 find_package(taopq REQUIRED)
 
-add_executable(RestInoBackend main.cpp includes/items/SystemItem src/SystemItem.cpp includes/handlers/handler_nodes_id.h includes/support/BDError includes/handlers/handler_imports.h includes/handlers/handler_delete_id.h includes/answers/answers.h includes/server/server.h includes/handlers/handlers_node_id_history.h includes/handlers/handler_updates.h includes/handlers/include_handlers includes/handlers/all_handlers.h)
+add_executable(RestInoBackend main.cpp includes/items/SystemItem src/SystemItem.cpp includes/handlers/handler_nodes_id.h includes/support/BDError includes/handlers/handler_imports.h includes/handlers/handler_delete_id.h includes/answers/answers.h includes/server/server.h includes/handlers/handlers_node_id_history.h includes/handlers/handler_updates.h includes/handlers/include_handlers includes/handlers/all_handlers.h includes/handlers/handler_not_matched.h)
 
 
 target_link_libraries(${PROJECT_NAME} magic_enum::magic_enum)

@@ -34,13 +34,14 @@ int main()
         };
         restinio::run(restinio::on_this_thread<my_server_traits>()
                 .port(80)
-                .request_handler(std::move(router)));
+                .request_handler(std::move(router))
+                .address("0.0.0.0"));
     }
     catch (std::exception& errc){
         if (logger_file.is_open())
         {   auto time = std::chrono::system_clock::now();
             auto time_t = std::chrono::system_clock::to_time_t(time);
-            logger_file << '[' << std::ctime(&time_t) << ']' << errc.what() << '\n';
+            logger_file << std::ctime(&time_t)  << errc.what() << '\n';
             logger_file.flush();
         }
 

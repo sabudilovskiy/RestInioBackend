@@ -9,4 +9,5 @@
 #include "handler_imports.h"
 #include "handler_updates.h"
 #include "handlers_node_id_history.h"
+#include "handler_not_matched.h"
 #endif //RESTINOBACKEND_ALL_HANDLERS_H
